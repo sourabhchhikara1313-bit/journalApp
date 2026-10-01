@@ -1,0 +1,16 @@
+$kind: http-request
+url: localhost:8080/journal
+method: POST
+body:
+  type: json
+  content: |-
+    {
+        "title":"Good Morning",
+        "content":"Happy Morning"
+    }
+auth:
+  type: basic
+  credentials:
+    username: sourabh
+    password: sourabh
+order: 1694135561333439

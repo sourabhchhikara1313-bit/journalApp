@@ -1,0 +1,9 @@
+$kind: http-request
+url: localhost:8080/journal/id/6ab268069d38f184b4be97dc
+method: GET
+auth:
+  type: basic
+  credentials:
+    username: sourabh
+    password: sourabh
+order: 4422048945455236

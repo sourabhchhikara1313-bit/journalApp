@@ -1,0 +1,16 @@
+$kind: http-request
+url: localhost:8080/journal/id/6ab268069d38f184b4be97dc
+method: PUT
+body:
+  type: json
+  content: |-
+    {
+        "title":"Top secret",
+        "content":"I block my friend"
+    }
+auth:
+  type: basic
+  credentials:
+    username: sourabh
+    password: sourabh
+order: 4458934806399441

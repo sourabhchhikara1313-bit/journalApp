@@ -1,0 +1,9 @@
+$kind: http-request
+url: localhost:8080/journal/id/6ab268a09d38f184b4be97dd
+method: DELETE
+auth:
+  type: basic
+  credentials:
+    username: sourabh
+    password: sourabh
+order: 4425121241055922

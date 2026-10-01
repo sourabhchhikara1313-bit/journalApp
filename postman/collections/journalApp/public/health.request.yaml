@@ -1,0 +1,4 @@
+$kind: http-request
+url: localhost:8080/public/health-check
+method: GET
+order: 1790073935429

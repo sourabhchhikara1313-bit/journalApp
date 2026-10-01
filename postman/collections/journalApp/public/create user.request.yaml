@@ -1,0 +1,11 @@
+$kind: http-request
+url: localhost:8080/public/create-user
+method: POST
+body:
+  type: json
+  content: |-
+    {
+        "userName":"sahil",
+        "password":"sahil"
+    }
+order: 1212455065613233
