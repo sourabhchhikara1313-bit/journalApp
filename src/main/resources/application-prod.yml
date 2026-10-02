@@ -1,7 +1,7 @@
 spring:
   data:
     mongodb:
-      uri: mongodb+srv://sourabhchhikara1313_db_user:Sourabh1313@sourabh.dnbgcz6.mongodb.net/journaldb?appName=Sourabh
+      uri: ${MONGODB_URI}
       database: journaldb
       auto-index-creation: true
 
