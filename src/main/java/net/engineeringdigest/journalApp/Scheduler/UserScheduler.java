@@ -25,7 +25,7 @@ public class UserScheduler {
     @Autowired
     private EmailService emailService;
 
-    @Autowired
+    @Autowired(required = false)
     private KafkaTemplate<String, Object> kafkaTemplate;
 
     @Autowired
@@ -58,9 +58,15 @@ public class UserScheduler {
                             .email(user.getEmail())
                             .sentiment("Sentiment for last 7 days: " + mostFrequentSentiment)
                             .build();
-                    try {
-                        kafkaTemplate.send("weekly-sentiments", sentimentData.getEmail(), sentimentData);
-                    }catch (Exception e){
+                    boolean sent = false;
+                    if (kafkaTemplate != null){
+                        try {
+                            kafkaTemplate.send("weekly-sentiments", sentimentData.getEmail(), sentimentData);
+                        }catch (Exception e){
+
+                        }
+                    }
+                    if(!sent){
                         emailService.sendEmail(sentimentData.getEmail(), "Sentiment for previous week", sentimentData.getSentiment());
                     }
                 }
