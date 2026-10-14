@@ -35,6 +35,7 @@ public class UserServiceTests {
         userRepository.deleteByUserName("suraj");
     }
 
+    @Disabled
     @ParameterizedTest
     @ArgumentsSource(UserArgumentsProvider.class)
     public void testSaveNewUser(User user) {

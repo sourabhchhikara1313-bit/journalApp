@@ -1,0 +1,10 @@
+$kind: http-request
+description: ""
+url: localhost:8080/admin/all-users
+method: GET
+auth:
+  type: basic
+  credentials:
+    username: sahil
+    password: sahil
+order: 1250314578708247

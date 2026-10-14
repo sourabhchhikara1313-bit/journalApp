@@ -1,0 +1,9 @@
+$kind: http-request
+url: localhost:8080/journal/user
+method: GET
+auth:
+  type: basic
+  credentials:
+    username: sahil
+    password: sahil
+order: 1790928951432

@@ -12,6 +12,7 @@ import org.springframework.data.mongodb.MongoTransactionManager;
 import org.springframework.data.mongodb.core.SimpleMongoClientDatabaseFactory;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
 @EnableTransactionManagement
@@ -26,19 +27,13 @@ public class JournalApplication {
 		return new MongoTransactionManager(dbFactory);
 	}
 
-//	@Bean
-//	public CommandLineRunner checkDb(MongoTemplate mongoTemplate, org.springframework.core.env.Environment env) {
-//		return args -> {
-//			System.out.println(">>>> CONNECTED TO DATABASE: " + mongoTemplate.getDb().getName());
-//            System.out.println(">>>> RAW URI PROPERTY: [" + env.getProperty("spring.data.mongodb.uri") + "]");
-//			System.out.println(">>>> Collections: " + mongoTemplate.getDb().listCollectionNames().into(new java.util.ArrayList<>()));
-//		};
-//	}
-
 	@Bean
 	public MongoDatabaseFactory mongoDatabaseFactory(@org.springframework.beans.factory.annotation.Value("${spring.data.mongodb.uri}") String uri){
 		return new SimpleMongoClientDatabaseFactory(uri);
 	}
+
+	@Bean
+	public RestTemplate getRestTemplate(){
+		return new RestTemplate();
+	}
 }
-//PlatformTransactionManager
-//MongoTransactionManager

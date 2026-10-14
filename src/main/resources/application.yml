@@ -1,3 +1,37 @@
 spring:
-  profiles:
-    active: dev
+  redis:
+    uri: redis://default:iYD7bvcqJpyItjMnVE90QvzBuitAIAZo@groomed-indubitable-throne-55225.db.redis.io:15149
+  data:
+    mongodb:
+      uri: ${MONGODB_URI}
+      database: journaldb
+      auto-index-creation: true
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: myjournalapp.dev@gmail.com
+    password: rckp uopv ewqm kgiv
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+server:
+  port: ${PORT:8080}
+  servlet:
+    context-path: /journal
+
+weather:
+  api:
+    key: ${WEATHER_API_KEY}
+
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
+jwt:
+  secret: ${JWT_SECRET}
+
