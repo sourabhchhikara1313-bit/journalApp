@@ -1,6 +1,6 @@
 spring:
   redis:
-    uri: redis://default:iYD7bvcqJpyItjMnVE90QvzBuitAIAZo@groomed-indubitable-throne-55225.db.redis.io:15149
+    uri: ${REDIS_URI}
   data:
     mongodb:
       uri: ${MONGODB_URI}
@@ -10,7 +10,7 @@ spring:
     host: smtp.gmail.com
     port: 587
     username: myjournalapp.dev@gmail.com
-    password: rckp uopv ewqm kgiv
+    password: ${MAIL_PASSWORD}
     properties:
       mail:
         smtp:
